@@ -1,0 +1,42 @@
+print("Welcome to my first game")
+name = input("what is your name ? ")
+age = int(input("what is your age?")) 
+
+health = 10
+
+if age >=18:
+    print("you are old enough") 
+    wants_to_play = input("Do you want to play? ").lower()
+    if wants_to_play == "yes":
+        print("you are starting with", health, "health")
+        print("Let's play")
+        left_or_right = input("First choice ... left or right (left/right)? ")
+        if left_or_right == "left":
+            ans = input("Nice you follow the path and reach the lake ....Do you swim across or go around (around/ across)? ")
+            if ans == "around":
+                print("you went around and reached the other side of lake.")
+              
+            elif ans == "across":
+                print("you wernt across and lost 5 health.")
+                health -= 5
+                ans = input("you notice a house and a river..which do you go to (river/ house)? ")
+                if ans == "house":
+                    print("The owner catches you and you lose 5 more health again.")
+                    
+                    health -= 5
+                    if health <= 0:
+                        print("you have zero helath bye")
+                    else:
+                        print("you win")
+               
+                else:
+                    print("you fell in the river and good bye!")
+            else:
+                print("you lost")
+        else:
+            print("you fell down and lost")
+    else:
+        print("cya..")
+          
+else :
+    print("you are not old enough to play")
